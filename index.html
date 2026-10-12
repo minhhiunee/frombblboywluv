@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Website chúc mừng Ngày Phụ nữ Việt Nam 20/10/2026." />
+    <title>Chúc mừng 20/10/2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Bỏ qua nội dung trang trí</a>
+
+    <div class="petal" aria-hidden="true"></div>
+    <div class="petal" aria-hidden="true"></div>
+    <div class="petal" aria-hidden="true"></div>
+    <div class="petal" aria-hidden="true"></div>
+    <div class="petal" aria-hidden="true"></div>
+
+    <img class="decor decor--tl" src="assets/images/decorations/flower-sprig.svg" alt="" />
+    <img class="decor decor--br" src="assets/images/decorations/flower-sprig.svg" alt="" />
+
+    <div class="page">
+      <header class="site-header">
+        <p class="brand"><span class="brand-mark">✦</span> 20 tháng 10</p>
+      </header>
+
+      <main id="main">
+        <section id="view-home" class="view hero-card" aria-labelledby="hero-title">
+          <p class="kicker">20 tháng 10 · 2026</p>
+          <h1 id="hero-title" class="hero-title">Một ngày thật đặc biệt dành cho bạn</h1>
+          <p class="lead">
+            Nhân Ngày Phụ nữ Việt Nam, đây là một món quà nhỏ được dành riêng cho từng người.
+            Hãy nhập tên để mở lời chúc và những khung ảnh được giữ lại cho bạn.
+          </p>
+
+          <form id="search-form" class="search-form" action="#" method="get">
+            <label class="field-label" for="name-input">Tên người nhận</label>
+            <div class="field-row">
+              <input
+                id="name-input"
+                name="name"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Nhập tên của bạn"
+                aria-describedby="search-hint search-status"
+              />
+              <button id="search-submit" class="btn btn-primary" type="submit">
+                Mở lời chúc của bạn
+              </button>
+            </div>
+            <p id="search-hint" class="hint">Nhập đúng tên người nhận để tiếp tục. Không cần tải lại trang.</p>
+            <p id="search-status" class="search-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <p class="ornament">thiệp nhỏ</p>
+        </section>
+
+        <section
+          id="view-greeting"
+          class="view greeting-card"
+          hidden
+          aria-labelledby="recipient-name"
+        >
+          <div class="greeting-toolbar">
+            <p class="kicker">Lời chúc riêng</p>
+            <button id="back-button" class="btn btn-ghost" type="button">Tìm người khác</button>
+          </div>
+          <h2 id="recipient-name" class="recipient-name"></h2>
+          <p id="recipient-subtitle" class="recipient-subtitle"></p>
+          <p id="recipient-message" class="recipient-message"></p>
+          <h3 class="gallery-heading">Những khung ảnh dành cho bạn</h3>
+          <div id="gallery" class="gallery"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Tri ân những người phụ nữ đã làm cho từng ngày trở nên dịu dàng hơn.</p>
+      </footer>
+    </div>
+
+    <p id="live-region" class="visually-hidden" role="status" aria-live="polite"></p>
+
+    <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
+      <div class="lightbox-toolbar">
+        <button id="lightbox-prev" class="icon-btn" type="button" aria-label="Ảnh trước">‹</button>
+        <button id="lightbox-close" class="icon-btn" type="button" aria-label="Đóng ảnh">×</button>
+        <button id="lightbox-next" class="icon-btn" type="button" aria-label="Ảnh sau">›</button>
+      </div>
+      <img id="lightbox-image" class="lightbox-image" alt="" />
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </dialog>
+
+    <script src="data/recipients.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/validate.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
