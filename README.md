@@ -1,85 +1,82 @@
 # Chúc mừng Ngày Phụ nữ Việt Nam 20/10/2026
 
-Website tĩnh, không backend, dùng để gửi lời chúc riêng cho tối đa 25 người. Người xem nhập tên, nếu khớp sẽ thấy lời chúc và thư viện 4–5 ảnh.
+Website tĩnh (100% Client-side HTML, CSS, JavaScript thuần), **hoàn toàn không có backend, database hay API**, sẵn sàng triển khai trực tiếp lên **GitHub Pages**.
 
-Phù hợp triển khai trên **GitHub Pages** (kể cả project site dạng `https://<user>.github.io/<repo>/`).
+Người xem mở website, nhập tên vào ô tìm kiếm (hỗ trợ cả tiếng Việt có dấu, không dấu, không phân biệt chữ hoa/thường, tự động loại bỏ khoảng trắng thừa). Khi khớp tên, website mở thiệp chúc mừng riêng biệt cùng bộ sưu tập 4–5 khung ảnh kỷ niệm (hỗ trợ phóng to Lightbox modal).
 
-## Công nghệ
+---
 
-HTML, CSS và JavaScript thuần. Dữ liệu nằm trong `data/recipients.js` nên hoạt động cả khi mở qua máy chủ tĩnh, không cần `fetch()` hay API.
+## 🌸 Danh sách 19 người nhận đã cấu hình sẵn
 
-Hai mục `person-01` và `person-02` đang là **dữ liệu mẫu** (`Mẫu Một`, `Mẫu Hai`) để kiểm tra giao diện. Các vị trí còn lại để trống (`status: "draft"`) cho đến khi có tên, lời chúc và ảnh thật.
+Đã cấu hình sẵn thông tin cho 19 người nhận trong `data/recipients.js` (trạng thái `ready`):
 
-## Chạy local
+1. **Nguyễn Thị Dung** (`person-01`)
+2. **Trần Thị Ngọc Quỳnh** (`person-02`)
+3. **Nguyễn Hải Băng Tâm** (`person-03`)
+4. **Dương Hà Phương** (`person-04`)
+5. **Hoàng Anh Thư** (`person-05`)
+6. **Nguyễn Thúy Lương** (`person-06`)
+7. **Bùi Kim Yến** (`person-07`)
+8. **Dương Yến Nhi** (`person-08`)
+9. **Nguyễn Thị Uyên Nhi** (`person-09`)
+10. **Nguyễn Minh Châu** (`person-10`)
+11. **Đặng Khánh Huệ** (`person-11`)
+12. **Phan Thị Trà My** (`person-12`)
+13. **Ninh Huyền Trang** (`person-13`)
+14. **Vũ Ngọc Hân** (`person-14`)
+15. **Diêm Thị Quyên** (`person-15`)
+16. **Giáp Thị Hồng Nhung** (`person-16`)
+17. **Nguyễn Ngọc Anh** (`person-17`)
+18. **Đặng Thị Kim Oanh** (`person-18`)
+19. **Nguyễn Thùy Linh** (`person-19`)
 
-Không mở trực tiếp bằng `file://` nếu bạn muốn kiểm tra đường dẫn giống lúc deploy. Hãy chạy một HTTP server từ thư mục gốc của dự án:
+*Các vị trí từ `person-20` đến `person-25` đang ở chế độ `draft` (chờ bổ sung tên và lời chúc khi có nhu cầu).*
+
+---
+
+## 🚀 Triển khai GitHub Pages trong 1 phút
+
+Dự án là website tĩnh thuần túy, mọi tài nguyên (CSS, JS, ảnh) đều dùng đường dẫn tương đối và có file `.nojekyll` sẵn ở thư mục gốc:
+
+1. Commit và push toàn bộ code lên repository trên GitHub (ví dụ nhánh `main`).
+2. Trên GitHub, vào **Settings** của repository -> mục **Pages** (cột bên trái).
+3. Tại phần **Build and deployment**:
+   - **Source**: Chọn `Deploy from a branch`
+   - **Branch**: Chọn `main` (hoặc `master`), thư mục `/ (root)`
+   - Nhấn **Save**.
+4. Chờ 1–2 phút, website sẽ hoạt động tại địa chỉ:  
+   `https://<tên-user>.github.io/<tên-repo>/`
+
+---
+
+## 📝 Cách tùy chỉnh lời chúc & thêm ảnh thật
+
+### 1. Thay đổi lời chúc riêng
+Mở file `data/recipients.js`:
+- Tìm đến người cần sửa (ví dụ `person-01`).
+- Sửa nội dung trường `message` (sử dụng `\n` để xuống dòng tự nhiên).
+- Sửa `subtitle` nếu muốn thay đổi câu mở đầu thiệp.
+
+### 2. Thêm ảnh thật cho từng người
+Trong thư mục `assets/images/people/`:
+- Đặt các file ảnh tương ứng vào thư mục của người đó, ví dụ:
+  ```text
+  assets/images/people/person-01/photo-01.webp
+  assets/images/people/person-01/photo-02.webp
+  assets/images/people/person-01/photo-03.webp
+  assets/images/people/person-01/photo-04.webp
+  ```
+  *(Có thể dùng định dạng .webp hoặc .jpg/.png và cập nhật đuôi file trong `data/recipients.js`)*.
+- **Lưu ý**: Nếu chưa có ảnh thật, hệ thống sẽ tự động hiển thị khung ảnh placeholder thanh lịch mà không làm vỡ giao diện hay phát sinh lỗi.
+
+---
+
+## 💻 Kiểm tra trên máy (Test tay cục bộ)
+
+Mở trực tiếp file `index.html` trên trình duyệt bằng cách click đúp, hoặc nếu muốn kiểm tra qua máy chủ cục bộ:
 
 ```bash
-# Python
+# Sử dụng Python có sẵn:
 python -m http.server 8080
 ```
-
-Rồi mở [http://localhost:8080](http://localhost:8080).
-
-Để xem lời chúc mẫu, nhập `Mẫu Một` hoặc `Mẫu Hai` (không phân biệt hoa thường, khoảng trắng thừa được bỏ).
-
-## Cấu hình 25 người nhận
-
-Mở `data/recipients.js`. Mỗi người có:
-
-| Trường | Ý nghĩa |
-| --- | --- |
-| `id` | Định danh duy nhất, giữ `person-01` … `person-25` |
-| `status` | `draft` (ẩn), `sample` (mẫu), `ready` (hiển thị) |
-| `name` | Tên dùng để tìm kiếm |
-| `subtitle` | Dòng mở đầu, có thể để trống |
-| `message` | Lời chúc; xuống dòng bằng `\n` |
-| `images` | 4 hoặc 5 đường dẫn ảnh |
-| `imageAlts` | Mô tả ảnh tương ứng |
-
-Khi đã có nội dung thật:
-
-1. Điền `name` và `message`.
-2. Đặt `status` thành `"ready"`.
-3. Với hai mục mẫu, hãy thay tên `Mẫu Một` / `Mẫu Hai` — không để tên mẫu lẫn với người thật.
-
-Người chưa `ready`/`sample` hoặc thiếu tên, lời chúc, hoặc không đủ 4–5 đường dẫn ảnh sẽ **không** hiện khi tìm kiếm.
-
-Tên sau khi chuẩn hóa (Unicode NFC, không phân biệt hoa thường, gộp khoảng trắng) phải là duy nhất. Nếu hai tên chỉ khác dấu và gây nhầm, người dùng cần nhập đúng dấu.
-
-## Thêm ảnh
-
-Cấu trúc thư mục:
-
-```text
-assets/images/people/person-01/photo-01.webp
-assets/images/people/person-01/photo-02.webp
-assets/images/people/person-01/photo-03.webp
-assets/images/people/person-01/photo-04.webp
-```
-
-Lặp tương tự đến `person-25`. Có thể thêm `photo-05.webp`. Ưu tiên WebP, kích thước vừa phải. Website chỉ tải ảnh của người đang xem.
-
-Nếu file chưa có, giao diện hiện khung chờ (`assets/images/decorations/placeholder.svg`) và không làm vỡ layout.
-
-## GitHub Pages
-
-1. Đưa toàn bộ source lên nhánh chính (ví dụ `main`).
-2. Settings → Pages → Build and deployment.
-3. Source: **Deploy from a branch**.
-4. Branch: `main`, folder: `/ (root)`.
-5. Không cần GitHub Actions, secret hay biến môi trường.
-
-File `.nojekyll` đã có để GitHub không xử lý Jekyll. Mọi đường dẫn CSS/JS/ảnh đều là đường dẫn tương đối, nên site vẫn chạy dưới `/<tên-repo>/`.
-
-## Kiểm tra nhanh
-
-- Trang chủ hiện hero và ô tìm tên, không liệt kê 25 người.
-- `Mẫu Một` / `  mẫu một  ` mở đúng lời chúc.
-- Tên không tồn tại báo lỗi thân thiện.
-- Nút **Tìm người khác** quay về ô tìm kiếm.
-- Ảnh mở lightbox; phím Escape đóng; mũi tên trái/phải đổi ảnh.
-
-## Ghi chú
-
-Không gửi tên người xem lên máy chủ. Toàn bộ tìm kiếm chạy trên trình duyệt. Font chữ tải từ Google Fonts; nếu mạng ngoài không có, trình duyệt dùng Times New Roman / Segoe UI / Tahoma.
+Truy cập: [http://localhost:8080](http://localhost:8080) và gõ bất kỳ tên nào trong 19 người trên để xem thiệp chúc mừng!
