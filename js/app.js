@@ -230,12 +230,25 @@
     }
     shownIndices = [];
 
-    fillText(els.recipientName, "Dành tặng " + person.name + " 🌸");
+    fillText(els.recipientName, person.name);
     fillText(
       els.recipientSubtitle,
-      person.subtitle || "Gửi ngàn lời chúc dịu dàng nhất"
+      person.subtitle || "Một ngày 20/10 thật dịu dàng và rạng rỡ"
     );
-    fillText(els.recipientMessage, person.message);
+
+    if (els.recipientMessage) {
+      els.recipientMessage.replaceChildren();
+      var paragraphs = String(person.message || "").split(/\n+/);
+      paragraphs.forEach(function (text) {
+        var trimmed = text.trim();
+        if (trimmed) {
+          var p = document.createElement("p");
+          p.className = "message-paragraph";
+          p.textContent = trimmed;
+          els.recipientMessage.appendChild(p);
+        }
+      });
+    }
 
     els.home.hidden = true;
     els.greeting.hidden = false;

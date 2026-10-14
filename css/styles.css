@@ -12,7 +12,7 @@
   --muted: #6d555c;
   --white: #fffdfb;
   --shadow: 0 24px 60px rgba(73, 52, 58, 0.12);
-  --serif: "Cormorant Garamond", "Times New Roman", "Noto Serif", Georgia, serif;
+  --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "Be Vietnam Pro", "Segoe UI", Tahoma, sans-serif;
   --radius: 28px;
   --content: 1120px;
@@ -116,25 +116,116 @@ input {
 
 .petal {
   position: fixed;
-  width: 14px;
-  height: 22px;
-  border-radius: 70% 70% 70% 0;
-  background: linear-gradient(140deg, var(--blush), var(--dusty));
-  opacity: 0.35;
-  z-index: 0;
+  top: -50px;
+  width: 22px;
+  height: 32px;
+  border-radius: 100% 0% 100% 20% / 100% 0% 100% 20%;
+  background: linear-gradient(135deg, #ffc2d1 0%, #ff85a1 50%, #e04b73 100%);
+  opacity: 0.8;
+  z-index: 4;
   pointer-events: none;
-  animation: drift 18s linear infinite;
+  filter: drop-shadow(0 4px 10px rgba(224, 75, 115, 0.35));
+  animation: petalDrift 14s linear infinite;
 }
 
-.petal:nth-child(1) { left: 8%; animation-delay: 0s; }
-.petal:nth-child(2) { left: 22%; animation-delay: -4s; width: 10px; height: 16px; }
-.petal:nth-child(3) { left: 48%; animation-delay: -8s; }
-.petal:nth-child(4) { left: 67%; animation-delay: -2s; }
-.petal:nth-child(5) { left: 84%; animation-delay: -11s; width: 12px; height: 18px; }
+.petal::after {
+  content: "";
+  position: absolute;
+  inset: 2px 3px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 65%);
+  pointer-events: none;
+}
 
-@keyframes drift {
-  0% { transform: translateY(-10vh) rotate(0deg); }
-  100% { transform: translateY(110vh) rotate(180deg); }
+.petal:nth-child(1) {
+  left: 6%;
+  width: 24px;
+  height: 35px;
+  animation-duration: 15s;
+  animation-delay: 0s;
+  --drift-x: 55px;
+}
+
+.petal:nth-child(2) {
+  left: 18%;
+  width: 18px;
+  height: 26px;
+  animation-duration: 13s;
+  animation-delay: -3.5s;
+  --drift-x: -45px;
+}
+
+.petal:nth-child(3) {
+  left: 32%;
+  width: 26px;
+  height: 38px;
+  animation-duration: 16s;
+  animation-delay: -8s;
+  --drift-x: 70px;
+}
+
+.petal:nth-child(4) {
+  left: 48%;
+  width: 20px;
+  height: 30px;
+  animation-duration: 14s;
+  animation-delay: -11.5s;
+  --drift-x: -50px;
+}
+
+.petal:nth-child(5) {
+  left: 64%;
+  width: 25px;
+  height: 36px;
+  animation-duration: 15.5s;
+  animation-delay: -2s;
+  --drift-x: 60px;
+}
+
+.petal:nth-child(6) {
+  left: 76%;
+  width: 17px;
+  height: 25px;
+  animation-duration: 12.5s;
+  animation-delay: -6s;
+  --drift-x: -40px;
+}
+
+.petal:nth-child(7) {
+  left: 87%;
+  width: 23px;
+  height: 33px;
+  animation-duration: 14.5s;
+  animation-delay: -9.5s;
+  --drift-x: 50px;
+}
+
+.petal:nth-child(8) {
+  left: 94%;
+  width: 21px;
+  height: 31px;
+  animation-duration: 16.5s;
+  animation-delay: -13s;
+  --drift-x: -55px;
+}
+
+@keyframes petalDrift {
+  0% {
+    top: -50px;
+    transform: translateX(0) rotate(0deg) rotateY(0deg);
+    opacity: 0;
+  }
+  12% {
+    opacity: 0.82;
+  }
+  88% {
+    opacity: 0.82;
+  }
+  100% {
+    top: 108vh;
+    transform: translateX(var(--drift-x, 60px)) rotate(360deg) rotateY(180deg);
+    opacity: 0;
+  }
 }
 
 .floating-gift {
@@ -277,8 +368,8 @@ main {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 6vw, 4.6rem);
-  max-width: 14ch;
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  max-width: 20ch;
 }
 
 .lead {
@@ -394,20 +485,17 @@ main {
 .ornament {
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: center;
   color: var(--gold);
   margin-top: 2.2rem;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
+  font-size: 0.82rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 }
 
 .ornament::before,
 .ornament::after {
-  content: "";
-  height: 1px;
-  width: 48px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  display: none;
 }
 
 /* GREETING CARD (Screenshot 1) */
@@ -460,76 +548,142 @@ main {
 .greeting-date-badge {
   font-family: var(--serif);
   font-size: 0.82rem;
-  letter-spacing: 0.2em;
-  color: var(--dusty);
+  letter-spacing: 0.22em;
+  color: #b78a94;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 .greeting-banner-title {
-  font-family: var(--sans);
-  font-size: clamp(2rem, 5.5vw, 2.9rem);
+  font-family: var(--serif);
+  font-size: clamp(2.1rem, 5.5vw, 2.95rem);
   font-weight: 700;
-  color: #e04b73;
-  margin: 0 0 0.5rem;
+  color: #dc3c66;
+  margin: 0 0 0.35rem;
   letter-spacing: -0.01em;
+}
+
+.greeting-dedication-label {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 3vw, 1.35rem);
+  font-weight: 500;
+  color: #5a3c46;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+.recipient-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.4rem, 2vw, 0.75rem);
+  margin: 0 0 0.45rem;
+}
+
+.name-flower {
+  font-size: clamp(1.4rem, 3.8vw, 2.1rem);
+  line-height: 1;
+  user-select: none;
+  filter: drop-shadow(0 3px 6px rgba(224, 75, 115, 0.25));
+  animation: flowerSway 3s ease-in-out infinite alternate;
+}
+
+@keyframes flowerSway {
+  0% { transform: rotate(-6deg) scale(0.96); }
+  100% { transform: rotate(6deg) scale(1.04); }
 }
 
 .recipient-name-highlight {
   font-family: var(--serif);
-  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
-  font-weight: 600;
-  color: var(--burgundy);
-  margin: 0 0 0.4rem;
+  font-size: clamp(1.75rem, 4.6vw, 2.45rem);
+  font-weight: 700;
+  color: #2e1820;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 10px rgba(112, 45, 66, 0.08);
 }
 
 .recipient-subtitle-text {
-  font-size: 0.96rem;
-  color: var(--dusty);
-  margin: 0 0 1.4rem;
+  font-size: 0.98rem;
+  color: #d65679;
   font-style: italic;
+  font-weight: 500;
+  margin: 0 0 1.6rem;
 }
 
 .recipient-message-text {
-  font-size: 1.08rem;
-  color: var(--brown);
-  line-height: 1.8;
-  white-space: pre-wrap;
-  margin: 0 0 1.8rem;
-  padding: 0 0.4rem;
+  font-size: 1.05rem;
+  color: #3d2830;
+  line-height: 1.85;
+  margin: 0 auto 1.6rem;
+  max-width: 530px;
+  text-align: center;
 }
 
+.message-paragraph {
+  margin: 0 0 1.15rem;
+}
+
+.message-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Callout lời nhắc chạm vào gói quà (được thu nhỏ gọn gàng, tinh tế) */
 .gift-hunt-callout {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
-  background: linear-gradient(135deg, #fff5f7, #fdebee);
-  border: 1px dashed rgba(224, 75, 115, 0.45);
+  justify-content: center;
+  gap: 0.5rem;
+  background: #fff7f9;
+  border: 1px dashed rgba(224, 75, 115, 0.4);
   border-radius: 999px;
-  padding: 0.65rem 1.4rem;
-  color: #c23359;
-  font-size: 0.92rem;
-  box-shadow: 0 4px 14px rgba(224, 75, 115, 0.08);
-  animation: pulseGlow 2.5s infinite alternate;
+  padding: 0.45rem 1.15rem;
+  color: #bf395d;
+  font-size: 0.82rem;
+  box-shadow: 0 3px 10px rgba(224, 75, 115, 0.06);
+  animation: pulseGlow 3s infinite alternate;
+  max-width: 92%;
+  line-height: 1.4;
+}
+
+.gift-hunt-callout strong {
+  color: #ad284c;
+  font-weight: 600;
 }
 
 @keyframes pulseGlow {
-  0% { transform: scale(1); box-shadow: 0 4px 14px rgba(224, 75, 115, 0.08); }
-  100% { transform: scale(1.025); box-shadow: 0 8px 24px rgba(224, 75, 115, 0.22); }
+  0% { transform: scale(1); box-shadow: 0 3px 10px rgba(224, 75, 115, 0.06); }
+  100% { transform: scale(1.02); box-shadow: 0 6px 18px rgba(224, 75, 115, 0.16); }
 }
 
 .hunt-gift-icon {
-  font-size: 1.25rem;
+  font-size: 1.05rem;
+  flex-shrink: 0;
 }
 
 .cat-doodle-wrap {
-  margin-top: 1.8rem;
+  margin-top: 1.6rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.doodle-tiny-heart {
+  font-size: 0.72rem;
+  line-height: 1;
+  user-select: none;
+  animation: heartFloat 2s ease-in-out infinite alternate;
+}
+
+@keyframes heartFloat {
+  0% { transform: translateY(0) scale(0.9); opacity: 0.75; }
+  100% { transform: translateY(-4px) scale(1.15); opacity: 1; }
 }
 
 .cat-doodle-img {
-  width: 58px;
+  width: 52px;
   height: auto;
   opacity: 0.95;
   filter: drop-shadow(0 4px 8px rgba(73, 52, 58, 0.1));
@@ -763,8 +917,8 @@ main {
   }
 
   .gift-hunt-callout {
-    font-size: 0.84rem;
-    padding: 0.55rem 1rem;
+    font-size: 0.78rem;
+    padding: 0.4rem 0.95rem;
   }
 }
 
