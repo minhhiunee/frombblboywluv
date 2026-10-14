@@ -5,7 +5,24 @@
   var recipients = window.RECIPIENTS || [];
   var currentPerson = null;
   var currentImages = [];
-  var lightboxIndex = 0;
+  var currentPhotoIndex = 0;
+  var shownIndices = [];
+
+  var SWEET_CAPTIONS = [
+    "Mỗi ngày của bạn đều là một đoá hoa nở rộ 🌸",
+    "Nụ cười rạng rỡ mang lại bình yên và niềm vui ✨",
+    "Tỏa sáng dịu dàng và tự tin theo cách riêng của bạn 💖",
+    "Mong bạn luôn an yên, hạnh phúc và được yêu thương 🎀",
+    "Một ngày thật ngọt ngào và trọn vẹn dành riêng cho bạn 🌷"
+  ];
+
+  var GIFT_ICONS = [
+    "assets/q3.png",
+    "assets/t2.png",
+    "assets/h1.png",
+    "assets/q3.png",
+    "assets/t5.png"
+  ];
 
   var els = {
     home: document.getElementById("view-home"),
@@ -17,15 +34,14 @@
     recipientName: document.getElementById("recipient-name"),
     recipientSubtitle: document.getElementById("recipient-subtitle"),
     recipientMessage: document.getElementById("recipient-message"),
-    gallery: document.getElementById("gallery"),
-    back: document.getElementById("back-button"),
     live: document.getElementById("live-region"),
-    lightbox: document.getElementById("lightbox"),
-    lightboxImage: document.getElementById("lightbox-image"),
-    lightboxCaption: document.getElementById("lightbox-caption"),
-    lightboxClose: document.getElementById("lightbox-close"),
-    lightboxPrev: document.getElementById("lightbox-prev"),
-    lightboxNext: document.getElementById("lightbox-next")
+    fallingZone: document.getElementById("falling-gifts-zone"),
+    photoModal: document.getElementById("photo-modal"),
+    photoModalImg: document.getElementById("photo-modal-img"),
+    photoModalCaption: document.getElementById("photo-modal-caption"),
+    photoModalClose: document.getElementById("photo-modal-close"),
+    musicToggle: document.getElementById("music-toggle"),
+    bgMusic: document.getElementById("bg-music")
   };
 
   function announce(message) {
@@ -44,71 +60,182 @@
   }
 
   function fillText(node, value) {
-    node.textContent = value || "";
+    if (node) {
+      node.textContent = value || "";
+    }
   }
 
-  function renderMessage(text) {
-    els.recipientMessage.textContent = text || "";
+  function spawnConfetti(clientX, clientY) {
+    var container = document.createElement("div");
+    container.className = "confetti-burst";
+    container.setAttribute("aria-hidden", "true");
+    container.style.position = "fixed";
+    container.style.left = (clientX || (window.innerWidth / 2)) + "px";
+    container.style.top = (clientY || (window.innerHeight / 2)) + "px";
+
+    var symbols = ["🌸", "✨", "💖", "🎀", "✦", "💛", "🌷"];
+    for (var i = 0; i < 9; i++) {
+      var p = document.createElement("span");
+      p.className = "confetti-particle";
+      p.textContent = symbols[i % symbols.length];
+      var angle = (Math.PI * 2 * i) / 9 + (Math.random() - 0.5) * 0.4;
+      var dist = 55 + Math.random() * 55;
+      p.style.setProperty("--tx", Math.cos(angle) * dist + "px");
+      p.style.setProperty("--ty", Math.sin(angle) * dist - 25 + "px");
+      p.style.setProperty("--rot", (Math.random() * 360 - 180) + "deg");
+      container.appendChild(p);
+    }
+    document.body.appendChild(container);
+    window.setTimeout(function () {
+      if (container.parentNode) {
+        container.parentNode.removeChild(container);
+      }
+    }, 1100);
   }
 
-  function bindImageFallback(img, figure) {
-    img.addEventListener("error", function onError() {
-      img.removeEventListener("error", onError);
-      img.src = search.PLACEHOLDER_SRC;
-      img.classList.add("is-fallback");
-      figure.classList.add("is-missing");
-    });
+  function getRandomIndex(total) {
+    if (total <= 1) return 0;
+    var available = [];
+    for (var i = 0; i < total; i++) {
+      if (shownIndices.indexOf(i) === -1) {
+        available.push(i);
+      }
+    }
+    if (available.length === 0) {
+      shownIndices = [];
+      for (var j = 0; j < total; j++) {
+        available.push(j);
+      }
+    }
+    var chosen = available[Math.floor(Math.random() * available.length)];
+    shownIndices.push(chosen);
+    return chosen;
   }
 
-  function renderGallery(person) {
-    els.gallery.replaceChildren();
-    currentImages = (person.images || []).filter(Boolean).slice(0, 5);
-    var alts = Array.isArray(person.imageAlts) ? person.imageAlts : [];
+  function displayPhoto(index) {
+    if (!currentImages.length) return;
+    currentPhotoIndex = index;
+    var src = currentImages[currentPhotoIndex];
 
-    currentImages.forEach(function (src, index) {
-      var figure = document.createElement("figure");
-      figure.className = "gallery-item gallery-item--" + (index + 1);
+    els.photoModalImg.src = src;
 
-      var button = document.createElement("button");
-      button.type = "button";
-      button.className = "gallery-trigger";
-      button.setAttribute("aria-label", "Xem ảnh lớn " + (index + 1) + " của " + person.name);
+    var caption =
+      (currentPerson &&
+        currentPerson.imageAlts &&
+        currentPerson.imageAlts[currentPhotoIndex]) ||
+      SWEET_CAPTIONS[currentPhotoIndex % SWEET_CAPTIONS.length];
+
+    els.photoModalCaption.textContent = caption;
+  }
+
+  function openPhotoModal(index) {
+    if (!currentImages.length) return;
+    if (typeof index !== "number") {
+      index = getRandomIndex(currentImages.length);
+    }
+    displayPhoto(index);
+
+    if (typeof els.photoModal.showModal === "function") {
+      if (!els.photoModal.open) {
+        els.photoModal.showModal();
+      }
+    } else {
+      els.photoModal.setAttribute("open", "");
+    }
+    announce("Đã mở ảnh số " + (currentPhotoIndex + 1) + " dành cho bạn");
+  }
+
+  function closePhotoModal() {
+    if (typeof els.photoModal.close === "function" && els.photoModal.open) {
+      els.photoModal.close();
+    } else {
+      els.photoModal.removeAttribute("open");
+    }
+  }
+
+  function stepPhoto(delta) {
+    if (!currentImages.length) return;
+    var next = (currentPhotoIndex + delta + currentImages.length) % currentImages.length;
+    displayPhoto(next);
+  }
+
+  function startFallingGifts() {
+    if (!els.fallingZone) return;
+    els.fallingZone.replaceChildren();
+
+    // Giảm số lượng gói quà rơi cùng lúc (3 gói trên di động, 4 gói trên máy tính) để giao diện thoáng, nhẹ nhàng
+    var isMobile = window.innerWidth < 640;
+    var count = isMobile ? 3 : 4;
+    var slotWidth = 76 / count;
+
+    for (var i = 0; i < count; i++) {
+      var item = document.createElement("button");
+      item.type = "button";
+      item.className = "falling-gift-btn";
+      item.setAttribute("aria-label", "Chạm để mở ảnh bất ngờ");
 
       var img = document.createElement("img");
-      img.alt = alts[index] || "Ảnh " + (index + 1) + " của " + person.name;
+      img.src = GIFT_ICONS[i % GIFT_ICONS.length];
+      img.alt = "";
       img.decoding = "async";
-      if (index === 0) {
-        img.loading = "eager";
-        img.fetchPriority = "high";
-      } else {
-        img.loading = "lazy";
-      }
+      item.appendChild(img);
 
-      bindImageFallback(img, figure);
-      img.src = src;
+      // Phân bổ vị trí ngang thoáng đãng và thời gian so le
+      var baseLeft = 12 + i * slotWidth;
+      var leftPercent = Math.floor(baseLeft + Math.random() * (slotWidth - 4));
+      var duration = (10 + Math.random() * 5).toFixed(1);
+      var delay = (-(i * 3.2 + Math.random() * 2.5)).toFixed(1);
+      var size = Math.floor(48 + Math.random() * 14);
+      var sway = Math.floor(-25 + Math.random() * 50);
 
-      var caption = document.createElement("figcaption");
-      caption.textContent = "Khung " + (index + 1);
+      item.style.left = leftPercent + "%";
+      item.style.animationDuration = duration + "s";
+      item.style.animationDelay = delay + "s";
+      item.style.width = size + "px";
+      item.style.height = size + "px";
+      item.style.setProperty("--sway-x", sway + "px");
 
-      button.appendChild(img);
-      figure.appendChild(button);
-      figure.appendChild(caption);
-      button.addEventListener("click", function () {
-        openLightbox(index);
-      });
-      els.gallery.appendChild(figure);
-    });
+      item.addEventListener("click", (function (btn) {
+        return function (e) {
+          var rect = btn.getBoundingClientRect();
+          spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+          btn.classList.add("is-popped");
+          window.setTimeout(function () {
+            btn.classList.remove("is-popped");
+          }, 400);
+          openPhotoModal();
+        };
+      })(item));
+
+      els.fallingZone.appendChild(item);
+    }
+  }
+
+  function stopFallingGifts() {
+    if (els.fallingZone) {
+      els.fallingZone.replaceChildren();
+    }
   }
 
   function showGreeting(person) {
     currentPerson = person;
-    fillText(els.recipientName, person.name);
+    currentImages = (person.images || []).filter(Boolean);
+    if (!currentImages.length) {
+      currentImages = [
+        "assets/images/decorations/placeholder.svg",
+        "assets/images/decorations/placeholder.svg",
+        "assets/images/decorations/placeholder.svg",
+        "assets/images/decorations/placeholder.svg"
+      ];
+    }
+    shownIndices = [];
+
+    fillText(els.recipientName, "Dành tặng " + person.name + " 🌸");
     fillText(
       els.recipientSubtitle,
-      person.subtitle || "Lời chúc dành riêng cho bạn"
+      person.subtitle || "Gửi ngàn lời chúc dịu dàng nhất"
     );
-    renderMessage(person.message);
-    renderGallery(person);
+    fillText(els.recipientMessage, person.message);
 
     els.home.hidden = true;
     els.greeting.hidden = false;
@@ -116,67 +243,21 @@
     void els.greeting.offsetWidth;
     els.greeting.classList.add("is-revealed");
 
+    startFallingGifts();
+
     setStatus("");
     announce("Đã mở lời chúc dành cho " + person.name);
-    els.back.focus();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function showHome() {
     currentPerson = null;
+    closePhotoModal();
+    stopFallingGifts();
     els.greeting.hidden = true;
     els.home.hidden = false;
-    els.gallery.replaceChildren();
     els.input.focus();
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-
-  function updateLightbox() {
-    var item = currentImages[lightboxIndex];
-    if (!item) {
-      return;
-    }
-    var alt =
-      (currentPerson &&
-        currentPerson.imageAlts &&
-        currentPerson.imageAlts[lightboxIndex]) ||
-      "Ảnh " + (lightboxIndex + 1);
-    els.lightboxImage.alt = alt;
-    els.lightboxImage.src = item;
-    els.lightboxCaption.textContent =
-      (currentPerson ? currentPerson.name + " · " : "") +
-      (lightboxIndex + 1) +
-      " / " +
-      currentImages.length;
-    els.lightboxPrev.disabled = currentImages.length < 2;
-    els.lightboxNext.disabled = currentImages.length < 2;
-  }
-
-  function openLightbox(index) {
-    lightboxIndex = index;
-    updateLightbox();
-    if (typeof els.lightbox.showModal === "function") {
-      els.lightbox.showModal();
-    } else {
-      els.lightbox.setAttribute("open", "");
-    }
-  }
-
-  function closeLightbox() {
-    if (typeof els.lightbox.close === "function" && els.lightbox.open) {
-      els.lightbox.close();
-    } else {
-      els.lightbox.removeAttribute("open");
-    }
-  }
-
-  function stepLightbox(delta) {
-    if (!currentImages.length) {
-      return;
-    }
-    lightboxIndex =
-      (lightboxIndex + delta + currentImages.length) % currentImages.length;
-    updateLightbox();
   }
 
   function handleSearch(event) {
@@ -212,18 +293,40 @@
     showGreeting(result.person);
   }
 
+  function toggleMusic() {
+    if (!els.bgMusic) return;
+    if (els.bgMusic.paused) {
+      els.bgMusic.play().then(function () {
+        if (els.musicToggle) {
+          els.musicToggle.classList.add("is-playing");
+          var txt = els.musicToggle.querySelector(".music-text");
+          if (txt) txt.textContent = "Tắt nhạc";
+        }
+      }).catch(function () {
+        // Autoplay policy or error
+      });
+    } else {
+      els.bgMusic.pause();
+      if (els.musicToggle) {
+        els.musicToggle.classList.remove("is-playing");
+        var txt2 = els.musicToggle.querySelector(".music-text");
+        if (txt2) txt2.textContent = "Bật nhạc";
+      }
+    }
+  }
+
   function onDocumentKeydown(event) {
-    if (event.key === "Escape" && els.lightbox.open) {
-      closeLightbox();
+    if (event.key === "Escape" && els.photoModal.open) {
+      closePhotoModal();
       return;
     }
-    if (!els.lightbox.open) {
+    if (!els.photoModal.open) {
       return;
     }
     if (event.key === "ArrowLeft") {
-      stepLightbox(-1);
+      stepPhoto(-1);
     } else if (event.key === "ArrowRight") {
-      stepLightbox(1);
+      stepPhoto(1);
     }
   }
 
@@ -232,26 +335,28 @@
       window.RecipientData.validateRecipients(recipients);
     }
 
-    els.lightboxImage.addEventListener("error", function () {
-      if (els.lightboxImage.src.indexOf("placeholder.svg") === -1) {
-        els.lightboxImage.src = search.PLACEHOLDER_SRC;
+    els.photoModalImg.addEventListener("error", function () {
+      if (els.photoModalImg.src.indexOf("placeholder.svg") === -1) {
+        els.photoModalImg.src = search.PLACEHOLDER_SRC;
       }
     });
 
     els.form.addEventListener("submit", handleSearch);
-    els.back.addEventListener("click", showHome);
-    els.lightboxClose.addEventListener("click", closeLightbox);
-    els.lightboxPrev.addEventListener("click", function () {
-      stepLightbox(-1);
-    });
-    els.lightboxNext.addEventListener("click", function () {
-      stepLightbox(1);
-    });
-    els.lightbox.addEventListener("click", function (event) {
-      if (event.target === els.lightbox) {
-        closeLightbox();
+
+    if (els.photoModalClose) {
+      els.photoModalClose.addEventListener("click", closePhotoModal);
+    }
+
+    if (els.musicToggle) {
+      els.musicToggle.addEventListener("click", toggleMusic);
+    }
+
+    els.photoModal.addEventListener("click", function (event) {
+      if (event.target === els.photoModal) {
+        closePhotoModal();
       }
     });
+
     document.addEventListener("keydown", onDocumentKeydown);
   }
 

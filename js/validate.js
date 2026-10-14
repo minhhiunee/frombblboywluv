@@ -25,8 +25,8 @@
       ids[person.id] = true;
 
       var imageCount = Array.isArray(person.images) ? person.images.length : 0;
-      if (imageCount < 4 || imageCount > 5) {
-        warnings.push(label + " nên có 4–5 đường dẫn ảnh (hiện: " + imageCount + ").");
+      if (imageCount < 1) {
+        warnings.push(label + " chưa có đường dẫn ảnh nào.");
       }
 
       if (person.status === "ready" || person.status === "sample") {

@@ -21,6 +21,12 @@
     <div class="petal" aria-hidden="true"></div>
     <div class="petal" aria-hidden="true"></div>
     <div class="petal" aria-hidden="true"></div>
+    <div class="floating-gift floating-gift--1" aria-hidden="true">
+      <img src="assets/q3.png" alt="" />
+    </div>
+    <div class="floating-gift floating-gift--2" aria-hidden="true">
+      <img src="assets/t2.png" alt="" />
+    </div>
 
     <img class="decor decor--tl" src="assets/images/decorations/flower-sprig.svg" alt="" />
     <img class="decor decor--br" src="assets/images/decorations/flower-sprig.svg" alt="" />
@@ -28,6 +34,10 @@
     <div class="page">
       <header class="site-header">
         <p class="brand"><span class="brand-mark">✦</span> 20 tháng 10</p>
+        <button id="music-toggle" class="btn-music" type="button" aria-label="Bật hoặc tắt nhạc nền">
+          <span class="music-icon">🎵</span> <span class="music-text">Bật nhạc</span>
+        </button>
+        <audio id="bg-music" src="assets/a.mp3" loop preload="none"></audio>
       </header>
 
       <main id="main">
@@ -64,19 +74,31 @@
 
         <section
           id="view-greeting"
-          class="view greeting-card"
+          class="view greeting-center-view"
           hidden
-          aria-labelledby="recipient-name"
+          aria-labelledby="greeting-banner-title"
         >
-          <div class="greeting-toolbar">
-            <p class="kicker">Lời chúc riêng</p>
-            <button id="back-button" class="btn btn-ghost" type="button">Tìm người khác</button>
+          <div class="greeting-box-card">
+            <div class="greeting-toolbar">
+              <span class="greeting-date-badge">20 · 10 · 2026</span>
+            </div>
+
+            <div class="greeting-content">
+              <h2 id="greeting-banner-title" class="greeting-banner-title">Chúc mừng 20-10</h2>
+              <p id="recipient-name" class="recipient-name-highlight"></p>
+              <p id="recipient-subtitle" class="recipient-subtitle-text"></p>
+              <p id="recipient-message" class="recipient-message-text"></p>
+
+              <div class="gift-hunt-callout">
+                <span class="hunt-gift-icon">🎁</span>
+                <span>Chạm vào các <strong>gói quà đang rơi</strong> để mở những bức ảnh bất ngờ!</span>
+              </div>
+            </div>
+
+            <div class="cat-doodle-wrap" aria-hidden="true">
+              <img src="assets/mewmew.gif" alt="" class="cat-doodle-img" />
+            </div>
           </div>
-          <h2 id="recipient-name" class="recipient-name"></h2>
-          <p id="recipient-subtitle" class="recipient-subtitle"></p>
-          <p id="recipient-message" class="recipient-message"></p>
-          <h3 class="gallery-heading">Những khung ảnh dành cho bạn</h3>
-          <div id="gallery" class="gallery"></div>
         </section>
       </main>
 
@@ -85,16 +107,20 @@
       </footer>
     </div>
 
+    <!-- Vùng chứa các gói quà rơi liên tục trên màn hình -->
+    <div id="falling-gifts-zone" class="falling-gifts-zone" aria-label="Các gói quà đang rơi"></div>
+
     <p id="live-region" class="visually-hidden" role="status" aria-live="polite"></p>
 
-    <dialog id="lightbox" class="lightbox" aria-labelledby="lightbox-caption">
-      <div class="lightbox-toolbar">
-        <button id="lightbox-prev" class="icon-btn" type="button" aria-label="Ảnh trước">‹</button>
-        <button id="lightbox-close" class="icon-btn" type="button" aria-label="Đóng ảnh">×</button>
-        <button id="lightbox-next" class="icon-btn" type="button" aria-label="Ảnh sau">›</button>
+    <!-- Modal hiển thị ảnh khi chạm vào gói quà (như Screenshot) -->
+    <dialog id="photo-modal" class="photo-modal" aria-labelledby="photo-modal-caption">
+      <div class="photo-modal-card">
+        <button id="photo-modal-close" class="photo-modal-close" type="button" aria-label="Đóng ảnh">×</button>
+        <div class="photo-modal-img-wrap">
+          <img id="photo-modal-img" class="photo-modal-img" alt="Ảnh kỷ niệm 20/10" />
+        </div>
+        <p id="photo-modal-caption" class="photo-modal-caption">Mỗi ngày của bạn đều là một đoá hoa nở rộ.</p>
       </div>
-      <img id="lightbox-image" class="lightbox-image" alt="" />
-      <p id="lightbox-caption" class="lightbox-caption"></p>
     </dialog>
 
     <script src="data/recipients.js"></script>

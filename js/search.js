@@ -25,7 +25,7 @@
     var name = String(person.name || "").trim();
     var message = String(person.message || "").trim();
     var images = Array.isArray(person.images) ? person.images.filter(Boolean) : [];
-    return Boolean(name && message && images.length >= 4 && images.length <= 5);
+    return Boolean(name && message && images.length >= 1);
   }
 
   function findRecipients(query, recipients) {
