@@ -130,11 +130,13 @@ window.RECIPIENTS = [
       "Mong bạn luôn giữ vững sự tự tin, thông minh, bản lĩnh và luôn xinh tươi trên mọi nẻo đường tương lai.",
     images: [
       "assets/images/people/Hoàng Anh Thư/Hoàng Anh Thư_1.jpg",
-      "assets/images/people/Hoàng Anh Thư/Hoàng Anh Thư_2.jpg"
+      "assets/images/people/Hoàng Anh Thư/Hoàng Anh Thư_2.jpg",
+      "assets/images/people/Hoàng Anh Thư/Hoàng Anh Thư_3.jpg"
     ],
     imageAlts: [
       "Khoảnh khắc thứ 1 của Hoàng Anh Thư",
-      "Khoảnh khắc thứ 2 của Hoàng Anh Thư"
+      "Khoảnh khắc thứ 2 của Hoàng Anh Thư",
+      "Khoảnh khắc thứ 3 của Hoàng Anh Thư"
     ]
   },
   {
@@ -213,10 +215,14 @@ window.RECIPIENTS = [
       "\n\n" +
       "Chúc bạn luôn xinh xắn, tự tin và luôn là nguồn cảm hứng dịu dàng cho những người xung quanh.",
     images: [
-      "assets/images/people/Nguyễn Thùy Linh/Nguyễn Thùy Linh.jpg"
+      "assets/images/people/Nguyễn Thùy Linh/Nguyễn Thùy Linh_1.jpg",
+      "assets/images/people/Nguyễn Thùy Linh/Nguyễn Thùy Linh_2.jpg",
+      "assets/images/people/Nguyễn Thùy Linh/Nguyễn Thùy Linh_3.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thùy Linh"
+      "Khoảnh khắc thứ 1 của Nguyễn Thùy Linh",
+      "Khoảnh khắc thứ 2 của Nguyễn Thùy Linh",
+      "Khoảnh khắc thứ 3 của Nguyễn Thùy Linh"
     ]
   },
   {
@@ -230,11 +236,15 @@ window.RECIPIENTS = [
       "Chúc bạn luôn an vui, may mắn, mỗi sớm mai thức dậy đều thấy lòng nhẹ nhõm và ngập tràn niềm tin yêu cuộc đời.",
     images: [
       "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_1.jpg",
-      "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_2.jpg"
+      "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_2.jpg",
+      "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_3.jpg",
+      "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_4.jpg"
     ],
     imageAlts: [
       "Khoảnh khắc thứ 1 của Nguyễn Thúy Lương",
-      "Khoảnh khắc thứ 2 của Nguyễn Thúy Lương"
+      "Khoảnh khắc thứ 2 của Nguyễn Thúy Lương",
+      "Khoảnh khắc thứ 3 của Nguyễn Thúy Lương",
+      "Khoảnh khắc thứ 4 của Nguyễn Thúy Lương"
     ]
   },
   {
@@ -336,11 +346,13 @@ window.RECIPIENTS = [
       "Chúc bạn luôn tìm thấy sự bình yên, tự tại và trọn vẹn niềm vui trong cuộc sống.",
     images: [
       "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_1.jpg",
-      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_2.JPG"
+      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_2.JPG",
+      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_3.JPG"
     ],
     imageAlts: [
       "Khoảnh khắc thứ 1 của Ninh Huyền Trang",
-      "Khoảnh khắc thứ 2 của Ninh Huyền Trang"
+      "Khoảnh khắc thứ 2 của Ninh Huyền Trang",
+      "Khoảnh khắc thứ 3 của Ninh Huyền Trang"
     ]
   },
   {
@@ -397,12 +409,16 @@ window.RECIPIENTS = [
       "\n\n" +
       "Chúc bạn luôn giữ vững niềm tin, sự lạc quan và luôn rạng ngời, hạnh phúc bên gia đình cùng những người thân yêu!",
     images: [
-      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý.jpg",
-      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_2.JPG"
+      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_1.jpg",
+      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_2.JPG",
+      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_3.JPG",
+      "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_4.JPG"
     ],
     imageAlts: [
       "Khoảnh khắc thứ 1 của Trần Thị Minh Lý",
-      "Khoảnh khắc thứ 2 của Trần Thị Minh Lý"
+      "Khoảnh khắc thứ 2 của Trần Thị Minh Lý",
+      "Khoảnh khắc thứ 3 của Trần Thị Minh Lý",
+      "Khoảnh khắc thứ 4 của Trần Thị Minh Lý"
     ]
   },
   {
@@ -504,11 +520,15 @@ window.RECIPIENTS = [
       "Chúc bạn luôn tươi vui, mạnh khỏe, mọi dự định đều thành công suôn sẻ và luôn có những người bạn đồng hành tuyệt vời bên cạnh.",
     images: [
       "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_1.jpg",
-      "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_2.jpg"
+      "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_2.jpg",
+      "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_3.jpg",
+      "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_4.jpg"
     ],
     imageAlts: [
       "Khoảnh khắc thứ 1 của Đặng Khánh Huệ",
-      "Khoảnh khắc thứ 2 của Đặng Khánh Huệ"
+      "Khoảnh khắc thứ 2 của Đặng Khánh Huệ",
+      "Khoảnh khắc thứ 3 của Đặng Khánh Huệ",
+      "Khoảnh khắc thứ 4 của Đặng Khánh Huệ"
     ]
   },
   {
