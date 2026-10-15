@@ -13,12 +13,22 @@
     "❤️", "🧡", "💛", "💜", "🩵", "🤍", "🩷"
   ];
 
-  function getRandomHearts() {
+  function renderHearts(container) {
+    if (!container) return;
+    container.replaceChildren();
     var count = 3 + Math.floor(Math.random() * 2); // 3 đến 4 trái tim ngẫu nhiên
     var shuffled = COLOR_HEARTS.slice().sort(function () {
       return 0.5 - Math.random();
     });
-    return shuffled.slice(0, count).join("  ");
+    var picked = shuffled.slice(0, count);
+    picked.forEach(function (heartChar, idx) {
+      var span = document.createElement("span");
+      span.className = "caption-heart-item";
+      span.textContent = heartChar;
+      span.setAttribute("aria-hidden", "true");
+      span.style.animationDelay = (idx * 0.18) + "s";
+      container.appendChild(span);
+    });
   }
 
   var GIFT_ICONS = [
@@ -78,7 +88,7 @@
     container.style.left = (clientX || (window.innerWidth / 2)) + "px";
     container.style.top = (clientY || (window.innerHeight / 2)) + "px";
 
-    var symbols = ["🌸", "✨", "💖", "🎀", "✦", "💛", "🌷"];
+    var symbols = ["💖", "💗", "💓", "🌸", "✨", "🩷", "🌷", "💝", "💕"];
     for (var i = 0; i < 9; i++) {
       var p = document.createElement("span");
       p.className = "confetti-particle";
@@ -124,7 +134,7 @@
 
     els.photoModalImg.src = src;
     els.photoModalImg.alt = currentPerson ? currentPerson.name : "Ảnh 20/10";
-    els.photoModalCaption.textContent = getRandomHearts();
+    renderHearts(els.photoModalCaption);
   }
 
   function openPhotoModal(index) {
@@ -361,6 +371,24 @@
 
     if (els.musicToggle) {
       els.musicToggle.addEventListener("click", toggleMusic);
+    }
+
+    var giftCallout = document.querySelector(".gift-hunt-callout");
+    if (giftCallout) {
+      giftCallout.style.cursor = "pointer";
+      giftCallout.setAttribute("role", "button");
+      giftCallout.setAttribute("tabindex", "0");
+      giftCallout.addEventListener("click", function (e) {
+        var rect = giftCallout.getBoundingClientRect();
+        spawnConfetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        openPhotoModal();
+      });
+      giftCallout.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          giftCallout.click();
+        }
+      });
     }
 
     els.photoModal.addEventListener("click", function (event) {

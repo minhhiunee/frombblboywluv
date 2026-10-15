@@ -157,9 +157,11 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_4.jpg",
       "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_5.jpg",
       "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_6.jpg",
-      "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_7.jpg"
+      "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_7.jpg",
+      "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_8.JPG"
     ],
     imageAlts: [
+      "💖",
       "💖",
       "💖",
       "💖",
@@ -377,9 +379,11 @@ window.RECIPIENTS = [
     images: [
       "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_1.jpg",
       "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_2.JPG",
-      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_3.JPG"
+      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_3.JPG",
+      "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_4.JPG"
     ],
     imageAlts: [
+      "💖",
       "💖",
       "💖",
       "💖"
@@ -474,9 +478,11 @@ window.RECIPIENTS = [
       "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_3.jpg",
       "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_4.jpg",
       "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_5.jpg",
-      "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_6.JPG"
+      "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_6.JPG",
+      "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_7.JPG"
     ],
     imageAlts: [
+      "💖",
       "💖",
       "💖",
       "💖",

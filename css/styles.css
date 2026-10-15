@@ -671,15 +671,33 @@ main {
 }
 
 .doodle-tiny-heart {
-  font-size: 0.72rem;
+  font-size: 1.35rem;
   line-height: 1;
   user-select: none;
-  animation: heartFloat 2s ease-in-out infinite alternate;
+  display: inline-block;
+  filter: drop-shadow(0 4px 10px rgba(224, 75, 115, 0.55));
+  animation: doodleHeartBeat 1.8s ease-in-out infinite;
 }
 
-@keyframes heartFloat {
-  0% { transform: translateY(0) scale(0.9); opacity: 0.75; }
-  100% { transform: translateY(-4px) scale(1.15); opacity: 1; }
+@keyframes doodleHeartBeat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 2px 6px rgba(224, 75, 115, 0.4));
+  }
+  18% {
+    transform: translateY(-5px) scale(1.35);
+    filter: drop-shadow(0 6px 14px rgba(224, 75, 115, 0.75));
+  }
+  36% {
+    transform: translateY(-2px) scale(1.1);
+  }
+  54% {
+    transform: translateY(-6px) scale(1.4);
+    filter: drop-shadow(0 8px 20px rgba(224, 75, 115, 0.85));
+  }
+  72% {
+    transform: translateY(0) scale(1.05);
+  }
 }
 
 .cat-doodle-img {
@@ -843,23 +861,70 @@ main {
 }
 
 .photo-modal-caption {
-  margin: 1.15rem 0 0.25rem;
-  text-align: center;
-  font-size: 1.55rem;
-  line-height: 1;
-  letter-spacing: 0.35rem;
+  margin: 1.25rem auto 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.5rem 1.6rem;
+  background: linear-gradient(135deg, rgba(255, 246, 248, 0.98), rgba(254, 238, 242, 0.95));
+  border: 1.5px solid rgba(224, 75, 115, 0.32);
+  border-radius: 999px;
+  box-shadow:
+    0 8px 24px rgba(224, 75, 115, 0.16),
+    0 2px 6px rgba(224, 75, 115, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
   user-select: none;
-  animation: heartGlow 2.5s ease-in-out infinite alternate;
+  animation: heartBadgePulse 2.8s ease-in-out infinite;
 }
 
-@keyframes heartGlow {
+.caption-heart-item {
+  display: inline-block;
+  font-size: 2.15rem;
+  line-height: 1;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 10px rgba(224, 75, 115, 0.45));
+  animation: heartItemBounce 1.8s ease-in-out infinite alternate;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+}
+
+.caption-heart-item:hover,
+.caption-heart-item:active {
+  transform: scale(1.4) translateY(-6px) rotate(8deg);
+  filter: drop-shadow(0 8px 18px rgba(224, 75, 115, 0.8));
+}
+
+@keyframes heartItemBounce {
   0% {
-    transform: scale(0.96);
-    filter: drop-shadow(0 2px 6px rgba(224, 75, 115, 0.2));
+    transform: translateY(0) scale(0.96);
+    filter: drop-shadow(0 3px 8px rgba(224, 75, 115, 0.35));
+  }
+  50% {
+    transform: translateY(-6px) scale(1.15);
+    filter: drop-shadow(0 7px 16px rgba(224, 75, 115, 0.65));
   }
   100% {
-    transform: scale(1.06);
-    filter: drop-shadow(0 4px 12px rgba(224, 75, 115, 0.45));
+    transform: translateY(2px) scale(1.02);
+    filter: drop-shadow(0 4px 10px rgba(224, 75, 115, 0.4));
+  }
+}
+
+@keyframes heartBadgePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow:
+      0 8px 24px rgba(224, 75, 115, 0.16),
+      0 2px 6px rgba(224, 75, 115, 0.08),
+      inset 0 1px 2px rgba(255, 255, 255, 0.95);
+    border-color: rgba(224, 75, 115, 0.3);
+  }
+  50% {
+    transform: scale(1.03);
+    box-shadow:
+      0 12px 32px rgba(224, 75, 115, 0.26),
+      0 0 18px rgba(240, 98, 146, 0.35),
+      inset 0 1px 2px rgba(255, 255, 255, 1);
+    border-color: rgba(224, 75, 115, 0.52);
   }
 }
 
@@ -872,9 +937,10 @@ main {
 
 .confetti-particle {
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   line-height: 1;
   user-select: none;
+  filter: drop-shadow(0 4px 10px rgba(224, 75, 115, 0.5));
   animation: particleBurst 0.95s cubic-bezier(0.2, 0.8, 0.3, 1) forwards;
 }
 
@@ -930,6 +996,15 @@ main {
     font-size: 0.78rem;
     padding: 0.4rem 0.95rem;
   }
+
+  .photo-modal-caption {
+    padding: 0.45rem 1.2rem;
+    gap: 0.65rem;
+  }
+
+  .caption-heart-item {
+    font-size: 1.75rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -942,6 +1017,9 @@ main {
   .falling-gift-btn,
   .falling-gift-btn img,
   .gift-hunt-callout,
+  .photo-modal-caption,
+  .caption-heart-item,
+  .doodle-tiny-heart,
   .confetti-particle {
     animation: none !important;
     transition: none !important;
