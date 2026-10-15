@@ -41,6 +41,7 @@ Dự án áp dụng mô hình phân tách mối quan tâm (Separation of Concern
 │   └── recipients.js          # Tầng dữ liệu (Data layer) chứa mảng cấu hình độc lập
 └── js/
     ├── app.js                 # Controller chính: điều phối trạng thái, vòng đời ứng dụng & hiệu ứng DOM
+    ├── game.js                # Mini game Arcade: Canvas 60FPS, vật lý va chạm, điều khiển thanh đỡ & tính điểm
     ├── search.js              # Thuật toán chuẩn hóa chuỗi và tìm kiếm client-side
     └── validate.js            # Module kiểm tra tính toàn vẹn của schema dữ liệu
 ```

@@ -134,10 +134,56 @@
     </div>
   </dialog>
 
+  <!-- Nút nhỏ ở góc dưới màn hình mở Mini Game -->
+  <button id="game-launcher-btn" class="game-launcher-btn" type="button" aria-label="Mở trò chơi hứng tim">
+    <span class="game-btn-icon" aria-hidden="true">🎮</span>
+    <span class="game-btn-text">Mini Game</span>
+  </button>
+
+  <!-- Modal Mini Game Hứng Tim -->
+  <dialog id="game-modal" class="game-modal" aria-labelledby="game-modal-title">
+    <div class="game-modal-card">
+      <div class="game-header">
+        <div class="game-title-wrap">
+          <h3 id="game-modal-title" class="game-title">🎮 Hứng Tim 20/10 💖</h3>
+          <p class="game-subtitle">Đỡ trái tim va vào hồng tâm ở trên để ghi điểm!</p>
+        </div>
+        <div class="game-scoreboard">
+          <div class="score-badge">
+            <span class="score-label">Điểm</span>
+            <span id="game-current-score" class="score-value">0</span>
+          </div>
+          <div class="score-badge score-badge--best">
+            <span class="score-label">Kỷ lục</span>
+            <span id="game-high-score" class="score-value">0</span>
+          </div>
+        </div>
+        <button id="game-modal-close" class="game-modal-close" type="button" aria-label="Đóng trò chơi">×</button>
+      </div>
+
+      <div class="game-canvas-wrap">
+        <canvas id="game-canvas" width="400" height="520"></canvas>
+        <div id="game-overlay" class="game-overlay">
+          <div class="game-overlay-content">
+            <div id="game-overlay-icon" class="game-overlay-icon">💖</div>
+            <h4 id="game-overlay-title" class="game-overlay-title">Sẵn sàng chưa?</h4>
+            <p id="game-overlay-desc" class="game-overlay-desc">Di chuyển thanh ngang để đỡ trái tim va vào hồng tâm ở trên nhé!</p>
+            <button id="game-start-btn" class="btn btn-primary game-action-btn" type="button">Bắt đầu chơi 🎮</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="game-instructions">
+        <span>💡 Kéo chuột / vuốt ngón tay hoặc bấm phím ⬅️ ➡️ để di chuyển thanh đỡ</span>
+      </div>
+    </div>
+  </dialog>
+
   <script src="data/recipients.js"></script>
   <script src="js/search.js"></script>
   <script src="js/validate.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/game.js"></script>
 </body>
 
 </html>
