@@ -8,13 +8,18 @@
   var currentPhotoIndex = 0;
   var shownIndices = [];
 
-  var SWEET_CAPTIONS = [
-    "Mỗi ngày của bạn đều là một đoá hoa nở rộ 🌸",
-    "Nụ cười rạng rỡ mang lại bình yên và niềm vui ✨",
-    "Tỏa sáng dịu dàng và tự tin theo cách riêng của bạn 💖",
-    "Mong bạn luôn an yên, hạnh phúc và được yêu thương 🎀",
-    "Một ngày thật ngọt ngào và trọn vẹn dành riêng cho bạn 🌷"
+  var COLOR_HEARTS = [
+    "💖", "💗", "💓", "💞", "💕", "💘", "💝",
+    "❤️", "🧡", "💛", "💜", "🩵", "🤍", "🩷"
   ];
+
+  function getRandomHearts() {
+    var count = 3 + Math.floor(Math.random() * 2); // 3 đến 4 trái tim ngẫu nhiên
+    var shuffled = COLOR_HEARTS.slice().sort(function () {
+      return 0.5 - Math.random();
+    });
+    return shuffled.slice(0, count).join("  ");
+  }
 
   var GIFT_ICONS = [
     "assets/q3.png",
@@ -118,14 +123,8 @@
     var src = currentImages[currentPhotoIndex];
 
     els.photoModalImg.src = src;
-
-    var caption =
-      (currentPerson &&
-        currentPerson.imageAlts &&
-        currentPerson.imageAlts[currentPhotoIndex]) ||
-      SWEET_CAPTIONS[currentPhotoIndex % SWEET_CAPTIONS.length];
-
-    els.photoModalCaption.textContent = caption;
+    els.photoModalImg.alt = currentPerson ? currentPerson.name : "Ảnh 20/10";
+    els.photoModalCaption.textContent = getRandomHearts();
   }
 
   function openPhotoModal(index) {

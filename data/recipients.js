@@ -26,13 +26,13 @@ window.RECIPIENTS = [
       "assets/images/people/Bùi Kim Yến/Bùi Kim Yến_7.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 2 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 3 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 4 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 5 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 6 của Bùi Kim Yến",
-      "Khoảnh khắc thứ 7 của Bùi Kim Yến"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -49,10 +49,10 @@ window.RECIPIENTS = [
       "assets/images/people/Diêm Thị Quyên/Diêm Thị Quyên_4.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Diêm Thị Quyên",
-      "Khoảnh khắc thứ 2 của Diêm Thị Quyên",
-      "Khoảnh khắc thứ 3 của Diêm Thị Quyên",
-      "Khoảnh khắc thứ 4 của Diêm Thị Quyên"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -69,10 +69,10 @@ window.RECIPIENTS = [
       "assets/images/people/Dương Hà Phương/Dương Hà Phương_4.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Dương Hà Phương",
-      "Khoảnh khắc thứ 2 của Dương Hà Phương",
-      "Khoảnh khắc thứ 3 của Dương Hà Phương",
-      "Khoảnh khắc thứ 4 của Dương Hà Phương"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -91,12 +91,12 @@ window.RECIPIENTS = [
       "assets/images/people/Dương Yến Nhi/Dương Yến Nhi_6.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Dương Yến Nhi",
-      "Khoảnh khắc thứ 2 của Dương Yến Nhi",
-      "Khoảnh khắc thứ 3 của Dương Yến Nhi",
-      "Khoảnh khắc thứ 4 của Dương Yến Nhi",
-      "Khoảnh khắc thứ 5 của Dương Yến Nhi",
-      "Khoảnh khắc thứ 6 của Dương Yến Nhi"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -116,13 +116,13 @@ window.RECIPIENTS = [
       "assets/images/people/Giáp Thị Hồng Nhung/Giáp Thị Hồng Nhung_7.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 2 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 3 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 4 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 5 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 6 của Giáp Thị Hồng Nhung",
-      "Khoảnh khắc thứ 7 của Giáp Thị Hồng Nhung"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -138,9 +138,9 @@ window.RECIPIENTS = [
       "assets/images/people/Hoàng Anh Thư/Hoàng Anh Thư_3.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Hoàng Anh Thư",
-      "Khoảnh khắc thứ 2 của Hoàng Anh Thư",
-      "Khoảnh khắc thứ 3 của Hoàng Anh Thư"
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -160,13 +160,13 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Hải Băng Tâm/Nguyễn Hải Băng Tâm_7.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 2 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 3 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 4 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 5 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 6 của Nguyễn Hải Băng Tâm",
-      "Khoảnh khắc thứ 7 của Nguyễn Hải Băng Tâm"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -183,10 +183,10 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Minh Châu/Nguyễn Minh Châu_4.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Minh Châu",
-      "Khoảnh khắc thứ 2 của Nguyễn Minh Châu",
-      "Khoảnh khắc thứ 3 của Nguyễn Minh Châu",
-      "Khoảnh khắc thứ 4 của Nguyễn Minh Châu"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -205,12 +205,12 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Ngọc Anh/Nguyễn Ngọc Anh_6.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Ngọc Anh",
-      "Khoảnh khắc thứ 2 của Nguyễn Ngọc Anh",
-      "Khoảnh khắc thứ 3 của Nguyễn Ngọc Anh",
-      "Khoảnh khắc thứ 4 của Nguyễn Ngọc Anh",
-      "Khoảnh khắc thứ 5 của Nguyễn Ngọc Anh",
-      "Khoảnh khắc thứ 6 của Nguyễn Ngọc Anh"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -226,9 +226,9 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thùy Linh/Nguyễn Thùy Linh_3.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thùy Linh",
-      "Khoảnh khắc thứ 2 của Nguyễn Thùy Linh",
-      "Khoảnh khắc thứ 3 của Nguyễn Thùy Linh"
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -245,10 +245,10 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thúy Lương/Nguyễn Thúy Lương_4.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thúy Lương",
-      "Khoảnh khắc thứ 2 của Nguyễn Thúy Lương",
-      "Khoảnh khắc thứ 3 của Nguyễn Thúy Lương",
-      "Khoảnh khắc thứ 4 của Nguyễn Thúy Lương"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -272,15 +272,15 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thị Dung/Nguyễn Thị Dung_9.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 2 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 3 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 4 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 5 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 6 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 7 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 8 của Nguyễn Thị Dung",
-      "Khoảnh khắc thứ 9 của Nguyễn Thị Dung"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -302,13 +302,13 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thị Ngọc Ánh/Nguyễn Thị Ngọc Ánh_7.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 2 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 3 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 4 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 5 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 6 của Nguyễn Thị Ngọc Ánh",
-      "Khoảnh khắc thứ 7 của Nguyễn Thị Ngọc Ánh"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -328,13 +328,13 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thị Thanh Mai/Nguyễn Thị Thanh Mai_7.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 2 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 3 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 4 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 5 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 6 của Nguyễn Thị Thanh Mai",
-      "Khoảnh khắc thứ 7 của Nguyễn Thị Thanh Mai"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -356,13 +356,13 @@ window.RECIPIENTS = [
       "assets/images/people/Nguyễn Thị Uyên Nhi/Nguyễn Thị Uyên Nhi_7.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 2 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 3 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 4 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 5 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 6 của Nguyễn Thị Uyên Nhi",
-      "Khoảnh khắc thứ 7 của Nguyễn Thị Uyên Nhi"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -380,9 +380,9 @@ window.RECIPIENTS = [
       "assets/images/people/Ninh Huyền Trang/Ninh Huyền Trang_3.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Ninh Huyền Trang",
-      "Khoảnh khắc thứ 2 của Ninh Huyền Trang",
-      "Khoảnh khắc thứ 3 của Ninh Huyền Trang"
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -402,13 +402,13 @@ window.RECIPIENTS = [
       "assets/images/people/Phan Thị Trà My/Phan Thị Trà My_7.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 2 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 3 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 4 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 5 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 6 của Phan Thị Trà My",
-      "Khoảnh khắc thứ 7 của Phan Thị Trà My"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -429,14 +429,14 @@ window.RECIPIENTS = [
       "assets/images/people/Phạm Thị Tâm/Phạm Thị Tâm_8.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 2 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 3 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 4 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 5 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 6 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 7 của Phạm Thị Tâm",
-      "Khoảnh khắc thứ 8 của Phạm Thị Tâm"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -453,10 +453,10 @@ window.RECIPIENTS = [
       "assets/images/people/Trần Thị Minh Lý/Trần Thị Minh Lý_4.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Trần Thị Minh Lý",
-      "Khoảnh khắc thứ 2 của Trần Thị Minh Lý",
-      "Khoảnh khắc thứ 3 của Trần Thị Minh Lý",
-      "Khoảnh khắc thứ 4 của Trần Thị Minh Lý"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -477,12 +477,12 @@ window.RECIPIENTS = [
       "assets/images/people/Trần Thị Ngọc Quỳnh/Trần Thị Ngọc Quỳnh_6.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Trần Thị Ngọc Quỳnh",
-      "Khoảnh khắc thứ 2 của Trần Thị Ngọc Quỳnh",
-      "Khoảnh khắc thứ 3 của Trần Thị Ngọc Quỳnh",
-      "Khoảnh khắc thứ 4 của Trần Thị Ngọc Quỳnh",
-      "Khoảnh khắc thứ 5 của Trần Thị Ngọc Quỳnh",
-      "Khoảnh khắc thứ 6 của Trần Thị Ngọc Quỳnh"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -500,11 +500,11 @@ window.RECIPIENTS = [
       "assets/images/people/Vũ Ngọc Hân/Vũ Ngọc Hân_5.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Vũ Ngọc Hân",
-      "Khoảnh khắc thứ 2 của Vũ Ngọc Hân",
-      "Khoảnh khắc thứ 3 của Vũ Ngọc Hân",
-      "Khoảnh khắc thứ 4 của Vũ Ngọc Hân",
-      "Khoảnh khắc thứ 5 của Vũ Ngọc Hân"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -524,13 +524,13 @@ window.RECIPIENTS = [
       "assets/images/people/Vũ Thùy Linh/Vũ Thùy Linh_7.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 2 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 3 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 4 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 5 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 6 của Vũ Thùy Linh",
-      "Khoảnh khắc thứ 7 của Vũ Thùy Linh"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -550,13 +550,13 @@ window.RECIPIENTS = [
       "assets/images/people/Đinh Thị Quyên/Đinh Thị Quyên_7.JPG"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 2 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 3 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 4 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 5 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 6 của Đinh Thị Quyên",
-      "Khoảnh khắc thứ 7 của Đinh Thị Quyên"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -573,10 +573,10 @@ window.RECIPIENTS = [
       "assets/images/people/Đặng Khánh Huệ/Đặng Khánh Huệ_4.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Đặng Khánh Huệ",
-      "Khoảnh khắc thứ 2 của Đặng Khánh Huệ",
-      "Khoảnh khắc thứ 3 của Đặng Khánh Huệ",
-      "Khoảnh khắc thứ 4 của Đặng Khánh Huệ"
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   },
   {
@@ -595,12 +595,12 @@ window.RECIPIENTS = [
       "assets/images/people/Đặng Thị Kim Oanh/Đặng Thị Kim Oanh_6.jpg"
     ],
     imageAlts: [
-      "Khoảnh khắc thứ 1 của Đặng Thị Kim Oanh",
-      "Khoảnh khắc thứ 2 của Đặng Thị Kim Oanh",
-      "Khoảnh khắc thứ 3 của Đặng Thị Kim Oanh",
-      "Khoảnh khắc thứ 4 của Đặng Thị Kim Oanh",
-      "Khoảnh khắc thứ 5 của Đặng Thị Kim Oanh",
-      "Khoảnh khắc thứ 6 của Đặng Thị Kim Oanh"
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖",
+      "💖"
     ]
   }
 ];
