@@ -35,7 +35,7 @@
     "assets/q3.png",
     "assets/t2.png",
     "assets/h1.png",
-    "assets/q3.png",
+    "assets/h3.png",
     "assets/t5.png"
   ];
 
@@ -172,10 +172,10 @@
     if (!els.fallingZone) return;
     els.fallingZone.replaceChildren();
 
-    // Giảm số lượng gói quà rơi cùng lúc (3 gói trên di động, 4 gói trên máy tính) để giao diện thoáng, nhẹ nhàng
+    // Tăng số lượng gói quà rơi: 5 gói trên di động, 7 gói trên máy tính
     var isMobile = window.innerWidth < 640;
-    var count = isMobile ? 3 : 4;
-    var slotWidth = 76 / count;
+    var count = isMobile ? 5 : 7;
+    var slotWidth = 84 / count;
 
     for (var i = 0; i < count; i++) {
       var item = document.createElement("button");
@@ -190,10 +190,10 @@
       item.appendChild(img);
 
       // Phân bổ vị trí ngang thoáng đãng và thời gian so le
-      var baseLeft = 12 + i * slotWidth;
-      var leftPercent = Math.floor(baseLeft + Math.random() * (slotWidth - 4));
-      var duration = (10 + Math.random() * 5).toFixed(1);
-      var delay = (-(i * 3.2 + Math.random() * 2.5)).toFixed(1);
+      var baseLeft = 8 + i * slotWidth;
+      var leftPercent = Math.floor(baseLeft + Math.random() * (slotWidth - 3));
+      var duration = (9 + Math.random() * 4.5).toFixed(1);
+      var delay = (-(i * 2.2 + Math.random() * 2)).toFixed(1);
       var size = Math.floor(48 + Math.random() * 14);
       var sway = Math.floor(-25 + Math.random() * 50);
 

@@ -137,8 +137,8 @@ input {
   pointer-events: none;
 }
 
-.petal:nth-child(1) {
-  left: 6%;
+.petal:nth-of-type(1), .petal:nth-child(2) {
+  left: 4%;
   width: 24px;
   height: 35px;
   animation-duration: 15s;
@@ -146,67 +146,130 @@ input {
   --drift-x: 55px;
 }
 
-.petal:nth-child(2) {
-  left: 18%;
-  width: 18px;
-  height: 26px;
-  animation-duration: 13s;
-  animation-delay: -3.5s;
-  --drift-x: -45px;
-}
-
-.petal:nth-child(3) {
-  left: 32%;
-  width: 26px;
-  height: 38px;
-  animation-duration: 16s;
-  animation-delay: -8s;
-  --drift-x: 70px;
-}
-
-.petal:nth-child(4) {
-  left: 48%;
-  width: 20px;
-  height: 30px;
-  animation-duration: 14s;
-  animation-delay: -11.5s;
-  --drift-x: -50px;
-}
-
-.petal:nth-child(5) {
-  left: 64%;
-  width: 25px;
-  height: 36px;
-  animation-duration: 15.5s;
-  animation-delay: -2s;
-  --drift-x: 60px;
-}
-
-.petal:nth-child(6) {
-  left: 76%;
-  width: 17px;
-  height: 25px;
-  animation-duration: 12.5s;
-  animation-delay: -6s;
+.petal:nth-of-type(2), .petal:nth-child(3) {
+  left: 11%;
+  width: 19px;
+  height: 28px;
+  animation-duration: 13.5s;
+  animation-delay: -4.5s;
   --drift-x: -40px;
 }
 
-.petal:nth-child(7) {
-  left: 87%;
-  width: 23px;
-  height: 33px;
-  animation-duration: 14.5s;
-  animation-delay: -9.5s;
+.petal:nth-of-type(3), .petal:nth-child(4) {
+  left: 18%;
+  width: 22px;
+  height: 32px;
+  animation-duration: 14s;
+  animation-delay: -9s;
   --drift-x: 50px;
 }
 
-.petal:nth-child(8) {
-  left: 94%;
-  width: 21px;
-  height: 31px;
+.petal:nth-of-type(4), .petal:nth-child(5) {
+  left: 25%;
+  width: 26px;
+  height: 38px;
+  animation-duration: 16s;
+  animation-delay: -2.5s;
+  --drift-x: -60px;
+}
+
+.petal:nth-of-type(5), .petal:nth-child(6) {
+  left: 32%;
+  width: 18px;
+  height: 26px;
+  animation-duration: 12.5s;
+  animation-delay: -7s;
+  --drift-x: 45px;
+}
+
+.petal:nth-of-type(6), .petal:nth-child(7) {
+  left: 39%;
+  width: 25px;
+  height: 36px;
+  animation-duration: 15.5s;
+  animation-delay: -11s;
+  --drift-x: -50px;
+}
+
+.petal:nth-of-type(7), .petal:nth-child(8) {
+  left: 47%;
+  width: 20px;
+  height: 29px;
+  animation-duration: 13s;
+  animation-delay: -1.5s;
+  --drift-x: 60px;
+}
+
+.petal:nth-of-type(8), .petal:nth-child(9) {
+  left: 54%;
+  width: 24px;
+  height: 35px;
   animation-duration: 16.5s;
-  animation-delay: -13s;
+  animation-delay: -6s;
+  --drift-x: -45px;
+}
+
+.petal:nth-of-type(9), .petal:nth-child(10) {
+  left: 61%;
+  width: 19px;
+  height: 28px;
+  animation-duration: 14.5s;
+  animation-delay: -10s;
+  --drift-x: 55px;
+}
+
+.petal:nth-of-type(10), .petal:nth-child(11) {
+  left: 68%;
+  width: 27px;
+  height: 39px;
+  animation-duration: 17s;
+  animation-delay: -3.5s;
   --drift-x: -55px;
+}
+
+.petal:nth-of-type(11), .petal:nth-child(12) {
+  left: 75%;
+  width: 17px;
+  height: 25px;
+  animation-duration: 12s;
+  animation-delay: -8s;
+  --drift-x: 40px;
+}
+
+.petal:nth-of-type(12), .petal:nth-child(13) {
+  left: 82%;
+  width: 25px;
+  height: 36px;
+  animation-duration: 15s;
+  animation-delay: -12.5s;
+  --drift-x: -50px;
+}
+
+.petal:nth-of-type(13), .petal:nth-child(14) {
+  left: 88%;
+  width: 20px;
+  height: 30px;
+  animation-duration: 13.5s;
+  animation-delay: -5s;
+  --drift-x: 45px;
+}
+
+.petal:nth-of-type(14), .petal:nth-child(15) {
+  left: 94%;
+  width: 23px;
+  height: 33px;
+  animation-duration: 16s;
+  animation-delay: -9.5s;
+  --drift-x: -40px;
+}
+
+.petal:nth-of-type(15), .petal:nth-child(16) {
+  left: 45%;
+  width: 22px;
+  height: 32px;
+  animation-duration: 14s;
+  animation-delay: -14s;
+  --drift-x: 50px;
 }
 
 @keyframes petalDrift {
