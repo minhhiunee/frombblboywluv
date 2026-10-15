@@ -257,7 +257,7 @@ window.RECIPIENTS = [
     id: "nguyen-thi-dung",
     status: "ready",
     name: "Nguyễn Thị Dung",
-    subtitle: "Aka Dun ~ Jun",
+    subtitle: "Aka Dun ~ Jun ~ Zun",
     message:
       "Nhân ngày 20/10, chúc Dung luôn vui vẻ, mạnh khỏe và lúc nào cũng giữ được sự nhẹ nhàng, dịu dàng của mình heee! 🌷 Mong công việc và cuộc sống của Dung đều thuận lợi, những dự định sắp tới sẽ dần thành hiện thực và mọi chuyện dù lớn hay nhỏ cũng đều được giải quyết ổn thỏa. Chúc Dung luôn gặp nhiều may mắn, đưa ra những lựa chọn khiến bản thân cảm thấy thoải mái và không phải bận lòng quá nhiều vì những chuyện xung quanh nhé." +
       "\n\n" +
